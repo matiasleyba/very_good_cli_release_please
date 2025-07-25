@@ -10,7 +10,7 @@ import 'package:very_good_cli/src/commands/commands.dart';
 import 'package:very_good_cli/src/logger_extension.dart';
 import 'package:very_good_cli/src/version.dart';
 
-/// The package name.
+/// The package name for the CLI.
 const packageName = 'very_good_cli';
 
 /// {@template very_good_command_runner}
