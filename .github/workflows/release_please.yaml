@@ -1,0 +1,42 @@
+name: release_please_dev
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+on:
+  workflow_dispatch:
+  push:
+    branches:
+      - release-please-test
+
+jobs:
+  create_release_pr:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: googleapis/release-please-action@v4
+        id: release-please
+        with:
+          token: ${{ secrets.RELEASE_PLEASE_TOKEN }}
+          manifest-file: ".release-please-manifest.json"
+          config-file: ".release-please-config.json"
+
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Print current branch
+        run: |
+          echo "Current branch: $(git rev-parse --abbrev-ref HEAD)"
+
+      - name: 🎯 Setup Dart
+        uses: dart-lang/setup-dart@v1
+      - name: 📦 Install Dependencies
+        run: dart pub get
+      - name: 📦 Bump lib/src/version.dart
+        run: dart run build_runner build --delete-conflicting-outputs
+      - name: ✏️ Commit changes
+        run: |
+          git add lib/src/version.dart
+          git commit -m "Bump lib/src/version.dart version to ${{ steps.release-please.outputs.version }}"
+          git push
