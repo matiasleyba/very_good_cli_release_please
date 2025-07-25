@@ -8,7 +8,7 @@ on:
   workflow_dispatch:
   push:
     branches:
-      - release-please-test
+      - main
 
 jobs:
   create_release_pr:
