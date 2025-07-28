@@ -1,17 +1,18 @@
 {
   "$schema": "https://raw.githubusercontent.com/googleapis/release-please/main/schemas/config.json",
-  "release-type": "dart",
   "changelog-types": [
     { "type": "feat", "section": "Features" },
     { "type": "fix", "section": "Fixes" },
-    { "type": "refactor","section": "Refactors" },
+    { "type": "refactor", "section": "Refactors" },
     { "type": "chore", "section": "Miscellaneous" },
     { "type": "docs", "section": "Documentation" }
   ],
   "pull-request-header": ":rotating_light: There are changes ready for release :rocket:\n\nMerge this PR once the team confirms the release is ready.",
   "pull-request-title-pattern": "chore: ${version}",
-  "changelog-path": "CHANGELOG.md",
   "packages": {
-    ".": {}
+    ".": {
+      "release-type": "dart",
+      "changelog-path": "CHANGELOG.md"
+    }
   }
 }
