@@ -9,6 +9,7 @@
   ],
   "pull-request-header": ":rotating_light: There are changes ready for release :rocket:\n\nMerge this PR once the team confirms the release is ready.",
   "pull-request-title-pattern": "chore: ${version}",
+  "include-component-in-tag": false,
   "packages": {
     ".": {
       "release-type": "dart",
