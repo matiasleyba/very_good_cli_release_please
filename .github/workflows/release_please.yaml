@@ -27,11 +27,15 @@ jobs:
 
       - name: Print current branch
         run: |
-          echo "Current branch: $(git rev-parse --abbrev-ref HEAD)"
+          echo "Current branch:"
+          echo "prs_created: ${{ steps.release-please.outputs.prs_created }}"
+          git rev-parse --abbrev-ref HEAD
 
-      - name: Exit if no PR created
-        if: ${{ !steps.release-please.outputs.pr }}
-        run: exit 0
+      - name: 🚨 Exit if no PR created
+        if: ${{ !steps.release-please.outputs.prs_created }}
+        run: |
+          echo "No PR created, exiting..."
+          exit 0
 
       - name: 🎯 Setup Dart
         uses: dart-lang/setup-dart@v1
@@ -48,7 +52,6 @@ jobs:
           git config user.email "release-please[bot]@users.noreply.github.com"
 
       - name: ✏️ Commit changes
-        if: ${{ steps.release-please.outputs.pr }}
         run: |
           git add lib/src/version.dart
           git commit -m "Bump lib/src/version.dart version to ${{ steps.release-please.outputs.version }}"
