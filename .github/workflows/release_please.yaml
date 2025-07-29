@@ -23,7 +23,7 @@ jobs:
           config-file: ".release-please-config.json"
 
       - name: 🚨 Exit if no PR created
-        if: ${{ !steps.release-please.outputs.prs_created }}
+        if: ${{ !steps.release-please.prs_created }}
         run: |
           echo "No PR created, exiting..."
           exit 0
@@ -49,7 +49,6 @@ jobs:
 
       - name: ✏️ Commit changes
         run: |
-          git status
           git add lib/src/version.dart
-          git commit -m "Bump lib/src/version.dart version to ${{ steps.release-please.outputs.version }}"
+          git commit -m "Bump lib/src/version.dart version to ${{ steps.release-please.version }}"
           git push
