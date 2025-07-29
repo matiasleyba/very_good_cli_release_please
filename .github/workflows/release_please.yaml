@@ -21,36 +21,3 @@ jobs:
           token: ${{ secrets.RELEASE_PLEASE_TOKEN }}
           manifest-file: ".release-please-manifest.json"
           config-file: ".release-please-config.json"
-
-      - name: 🚨 Exit if no PR created
-        if: ${{ !steps.release-please.outputs.prs_created }}
-        run: |
-          echo "No PR created, exiting..."
-          exit 0
-
-      - name: 📚 Checkout
-        uses: actions/checkout@v4
-        with:
-          ref: release-please--branches--main--components--very_good_cli
-
-      - name: ⚙️ Config git user
-        run: |
-          git config user.name "release-please[bot]"
-          git config user.email "release-please[bot]@users.noreply.github.com"
-
-      - name: 🎯 Setup Dart
-        uses: dart-lang/setup-dart@v1
-
-      - name: 📦 Install Dependencies
-        run: dart pub get
-
-      - name: 📦 Bump lib/src/version.dart
-        run: dart run build_runner build --delete-conflicting-outputs
-
-      - name: ✏️ Commit changes
-        run: |
-          git add lib/src/version.dart
-          VERSION=$(grep 'packageVersion' lib/src/version.dart | cut -d "'" -f 2)
-          COMMIT_MSG="chore: bump lib/src/version.dart version to $VERSION"
-          git commit -m "$COMMIT_MSG"
-          git push
