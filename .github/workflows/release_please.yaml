@@ -29,13 +29,26 @@ jobs:
         run: |
           echo "Current branch: $(git rev-parse --abbrev-ref HEAD)"
 
+      - name: Exit if no PR created
+        if: ${{ !steps.release-please.outputs.pr }}
+        run: exit 0
+
       - name: 🎯 Setup Dart
         uses: dart-lang/setup-dart@v1
+
       - name: 📦 Install Dependencies
         run: dart pub get
+
       - name: 📦 Bump lib/src/version.dart
         run: dart run build_runner build --delete-conflicting-outputs
+
+      - name: ⚙️ Config git user
+        run: |
+          git config user.name "release-please[bot]"
+          git config user.email "release-please[bot]@users.noreply.github.com"
+
       - name: ✏️ Commit changes
+        if: ${{ steps.release-please.outputs.pr }}
         run: |
           git add lib/src/version.dart
           git commit -m "Bump lib/src/version.dart version to ${{ steps.release-please.outputs.version }}"
