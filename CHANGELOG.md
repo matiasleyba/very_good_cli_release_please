@@ -1,3 +1,25 @@
+## [0.27.0](https://github.com/matiasleyba/very_good_cli_release_please/compare/v0.26.2...v0.27.0) (2025-07-29)
+
+
+### Features
+
+* dummy change ([3d6e1aa](https://github.com/matiasleyba/very_good_cli_release_please/commit/3d6e1aab648aa4cfe6c6200c4ed568b1ad61d4b5))
+
+
+### Bug Fixes
+
+* README ([4f95e71](https://github.com/matiasleyba/very_good_cli_release_please/commit/4f95e711aa3fa2ad0424f42c7c5c52441c465b9f))
+* release ([1a58c0c](https://github.com/matiasleyba/very_good_cli_release_please/commit/1a58c0ce205bf3912dc6077100067f58171803be))
+* remove component from tag ([cb7afc1](https://github.com/matiasleyba/very_good_cli_release_please/commit/cb7afc1233e689ea560cddbb913b022d11d1daf4))
+
+
+### Miscellaneous Chores
+
+* 1.0.0 ([72931a5](https://github.com/matiasleyba/very_good_cli_release_please/commit/72931a551f19e3225805fb333c79a1ab2968ede2))
+* 1.0.0 ([6177936](https://github.com/matiasleyba/very_good_cli_release_please/commit/61779361d40e12bb48966b54144833af7270a66c))
+* update SPDX licenses ([5911ae5](https://github.com/matiasleyba/very_good_cli_release_please/commit/5911ae5464f6d11835a1dc47f964c1e7dc9ac5ce))
+* update SPDX licenses ([84e058e](https://github.com/matiasleyba/very_good_cli_release_please/commit/84e058e144c3692232ad403a5e14f5653c764c33))
+* updates ([ebf5523](https://github.com/matiasleyba/very_good_cli_release_please/commit/ebf5523d820aa94d67d1313ac5979872b7a70003))
 
 ## 0.26.2
 
