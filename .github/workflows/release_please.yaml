@@ -22,20 +22,16 @@ jobs:
           manifest-file: ".release-please-manifest.json"
           config-file: ".release-please-config.json"
 
-      - name: Checkout
-        uses: actions/checkout@v4
-
-      - name: Print current branch
-        run: |
-          echo "Current branch:"
-          echo "prs_created: ${{ steps.release-please.outputs.prs_created }}"
-          git rev-parse --abbrev-ref HEAD
-
       - name: 🚨 Exit if no PR created
         if: ${{ !steps.release-please.outputs.prs_created }}
         run: |
           echo "No PR created, exiting..."
           exit 0
+
+      - name: 📚 Checkout
+        uses: actions/checkout@v4
+        with:
+          ref: release-please--branches--main--components--very_good_cli
 
       - name: 🎯 Setup Dart
         uses: dart-lang/setup-dart@v1
@@ -53,6 +49,7 @@ jobs:
 
       - name: ✏️ Commit changes
         run: |
+          git status
           git add lib/src/version.dart
           git commit -m "Bump lib/src/version.dart version to ${{ steps.release-please.outputs.version }}"
           git push

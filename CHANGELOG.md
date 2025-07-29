@@ -1,3 +1,4 @@
+
 ## 0.26.2
 
 - feat: bump template bundles ([#1308](https://github.com/VeryGoodOpenSource/very_good_cli/issues/1308))
