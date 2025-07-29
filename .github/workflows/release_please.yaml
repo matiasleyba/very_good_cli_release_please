@@ -51,6 +51,6 @@ jobs:
         run: |
           git add lib/src/version.dart
           VERSION=$(grep 'packageVersion' lib/src/version.dart | cut -d "'" -f 2)
-          COMMIT_MSG="Bump lib/src/version.dart version to $VERSION"
+          COMMIT_MSG="chore: bump lib/src/version.dart version to $VERSION"
           git commit -m "$COMMIT_MSG"
           git push
