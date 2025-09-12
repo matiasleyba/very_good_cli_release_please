@@ -11,7 +11,7 @@
 library spdx_license;
 
 /// {@template spdx_license}
-/// A list of all 701 SPDX licenses.
+/// A list of all 707 SPDX licenses.
 ///
 /// These have been automatically generated from the SPDX License brick.
 /// {@endtemplate}
@@ -52,6 +52,7 @@ enum SpdxLicense {
   $Adobe_Display_PostScript._('Adobe-Display-PostScript'),
   $Adobe_Glyph._('Adobe-Glyph'),
   $Adobe_Utopia._('Adobe-Utopia'),
+  $Advanced_Cryptics_Dictionary._('Advanced-Cryptics-Dictionary'),
   $Afmparse._('Afmparse'),
   $Aladdin._('Aladdin'),
   $Apache_1_0._('Apache-1.0'),
@@ -88,6 +89,7 @@ enum SpdxLicense {
   $BSD_3_Clause_No_Nuclear_Warranty._('BSD-3-Clause-No-Nuclear-Warranty'),
   $BSD_3_Clause_Open_MPI._('BSD-3-Clause-Open-MPI'),
   $BSD_3_Clause_Sun._('BSD-3-Clause-Sun'),
+  $BSD_3_Clause_Tso._('BSD-3-Clause-Tso'),
   $BSD_3_Clause_acpica._('BSD-3-Clause-acpica'),
   $BSD_3_Clause_flex._('BSD-3-Clause-flex'),
   $BSD_4_Clause._('BSD-4-Clause'),
@@ -98,6 +100,7 @@ enum SpdxLicense {
   $BSD_Advertising_Acknowledgement._('BSD-Advertising-Acknowledgement'),
   $BSD_Attribution_HPND_disclaimer._('BSD-Attribution-HPND-disclaimer'),
   $BSD_Inferno_Nettverk._('BSD-Inferno-Nettverk'),
+  $BSD_Mark_Modifications._('BSD-Mark-Modifications'),
   $BSD_Protection._('BSD-Protection'),
   $BSD_Source_Code._('BSD-Source-Code'),
   $BSD_Source_beginning_file._('BSD-Source-beginning-file'),
@@ -239,6 +242,8 @@ enum SpdxLicense {
   $EPICS._('EPICS'),
   $EPL_1_0._('EPL-1.0'),
   $EPL_2_0._('EPL-2.0'),
+  $ESA_PL_permissive_2_4._('ESA-PL-permissive-2.4'),
+  $ESA_PL_weak_copyleft_2_4._('ESA-PL-weak-copyleft-2.4'),
   $EUDatagrid._('EUDatagrid'),
   $EUPL_1_0._('EUPL-1.0'),
   $EUPL_1_1._('EUPL-1.1'),
@@ -634,6 +639,7 @@ enum SpdxLicense {
   $W3C._('W3C'),
   $W3C_19980720._('W3C-19980720'),
   $W3C_20150513._('W3C-20150513'),
+  $WTFNMFPL._('WTFNMFPL'),
   $WTFPL._('WTFPL'),
   $Watcom_1_0._('Watcom-1.0'),
   $Widget_Workshop._('Widget-Workshop'),
