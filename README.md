@@ -12,7 +12,7 @@
 
 ---
 
-A Very Good Command-Line Interface for Dart.
+A Very Good Command-Line Interface for Dart and Flutter
 
 Developed with 💙 by [Very Good Ventures][very_good_ventures_link] 🦄
 
